@@ -5,13 +5,12 @@ require('lazy').setup({
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
     {
-        'rose-pine/nvim',
-        name = 'rose-pine',
+        'EdenEast/nightfox.nvim',
         priority = 1000,
         lazy = false,
         config = function()
-            vim.cmd([[colorscheme rose-pine]])
-        end
+            vim.cmd([[colorscheme nightfox]])
+        end,
     },
     "mbbill/undotree",
     {
