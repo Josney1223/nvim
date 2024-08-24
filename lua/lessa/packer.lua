@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme rose-pine')
 	  end
   })
-
+  use "mbbill/undotree"
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
   use {
@@ -24,4 +24,9 @@ return require('packer').startup(function(use)
 	  branch = "harpoon2",
 	  requires = { {"nvim-lua/plenary.nvim"} }
   }
+  use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
+  use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim","neovim/nvim-lspconfig",}
+  use({'neovim/nvim-lspconfig'})
+  use({'hrsh7th/nvim-cmp'})
+  use({'hrsh7th/cmp-nvim-lsp'})
 end)
