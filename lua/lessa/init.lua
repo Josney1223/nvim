@@ -1,2 +1,7 @@
 require("lessa.remap")
-print("From Lessa")
+--require("lessa.colorsscheme")
+require("lessa.packer")
+require("after.plugin.colors")
+print("From Lessa with colormypencils")
+
+ColorMyPencils()
