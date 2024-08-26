@@ -2,9 +2,10 @@
 
 require('lazy').setup({
     {
-        'nvim-telescope/telescope.nvim', version= '0.1.8',
+        'nvim-telescope/telescope.nvim',
+        version = '0.1.8',
         -- or                            , branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep'} }
+        dependencies = { { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' } }
     },
     {
         'EdenEast/nightfox.nvim',
@@ -23,7 +24,7 @@ require('lazy').setup({
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        dependencies = { {"nvim-lua/plenary.nvim"} }
+        dependencies = { { "nvim-lua/plenary.nvim" } }
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -42,4 +43,5 @@ require('lazy').setup({
         version = "*",
         config = true
     },
+    'tpope/vim-fugitive'
 })
