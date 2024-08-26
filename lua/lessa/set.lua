@@ -1,3 +1,10 @@
+local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
+if BinaryFormat == "so" then
+  vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+elseif BinaryFormat == "dll" then
+  vim.opt.undodir = os.getenv("HOMEPATH") .. "/.nvim/undodir"
+end
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -8,7 +15,6 @@ vim.opt.expandtab = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
