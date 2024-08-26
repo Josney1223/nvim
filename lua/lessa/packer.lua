@@ -4,17 +4,7 @@ require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim', version= '0.1.8',
         -- or                            , branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep'} },
-        opts = {
-          defaults = {
-            file_ignore_patterns = {
-              "^node_modules/%",
-              "^./.git/%",
-              "^node_modules\\%",
-              "^/.git\\\\%",
-            }
-          }
-        }
+        dependencies = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep'} }
     },
     {
         'EdenEast/nightfox.nvim',
