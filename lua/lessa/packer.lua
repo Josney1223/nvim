@@ -1,3 +1,5 @@
+-- on windows install choco, with choco install ripgrep and fd
+
 require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim', version= '0.1.8',
