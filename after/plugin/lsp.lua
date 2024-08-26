@@ -4,7 +4,8 @@
 
 local lsp_zero = require('lsp-zero')
 local lsp_attach = function(client, bufnr)
-  local opts = {buffer = bufnr}
+  lsp_zero.buffer_autoformat()
+  local opts = { buffer = bufnr }
 
   vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
   vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -14,7 +15,7 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
   vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
   vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-  vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+  vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
   vim.keymap.set('n', '<leader>vca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 end
 
@@ -31,7 +32,7 @@ local cmp = require('cmp')
 
 cmp.setup({
   sources = {
-    {name = 'nvim_lsp'},
+    { name = 'nvim_lsp' },
   },
   snippet = {
     expand = function(args)
@@ -44,30 +45,29 @@ cmp.setup({
 
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = {
-        "lua_ls",
-        "gopls",
-        "tsserver",
-        "eslint",
-        "svelte",
-        "tailwindcss"
-    },
-    handlers = {
-	    function(server_name)
-		    require('lspconfig')[server_name].setup({})
-	    end,
-    }
+  ensure_installed = {
+    "lua_ls",
+    "gopls",
+    "tsserver",
+    "eslint",
+    "svelte",
+    "tailwindcss"
+  },
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  }
 }
 
 require("lspconfig").lua_ls.setup {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = {
-					'vim'
-				}
-			}
-		}
-	}
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {
+          'vim'
+        }
+      }
+    }
+  }
 }
-
