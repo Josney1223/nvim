@@ -51,7 +51,8 @@ require("mason-lspconfig").setup {
         "tsserver",
         "eslint",
         "svelte",
-        "tailwindcss"
+        "tailwindcss",
+        "pyright"
     },
     handlers = {
         function(server_name)
