@@ -24,7 +24,7 @@ Needs Node 20+ installed(i think this is the minimum version)
 Using the nightfox theme, change it in lua/lessa/packer.lua, inside the `EdenEast/nightfox.nvim`
 
 ## Installed Plugins
-- Telescope (Moving between files)
+- Telescope & complimentary (Moving between files)
 - Fugitive (Git integration)
 - Harpoon (Changing between chosen files)
 - Terminal (Opening terminal inside nvim)
