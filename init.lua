@@ -21,4 +21,4 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.maplocalleader = "\\"
 vim.g.mapleader = " "
 
-require("lessa")
+require("mynvim")
