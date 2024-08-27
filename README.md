@@ -22,3 +22,13 @@ Needs Node 20+ installed(i think this is the minimum version)
 
 ## Theme 
 Using the nightfox theme, change it in lua/lessa/packer.lua, inside the `EdenEast/nightfox.nvim`
+
+## Installed Plugins
+- Telescope (Moving between files)
+- Fugitive (Git integration)
+- Harpoon (Changing between chosen files)
+- Terminal (Opening terminal inside nvim)
+- Undotree (Nice Undotree) 
+- lsp_zero (Using LSP)
+- Mason & complimentary (Managing LSPs)
+- Treesitter (For hightlighting in languages)
