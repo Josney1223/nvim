@@ -3,6 +3,7 @@ if BinaryFormat == "so" then
     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 elseif BinaryFormat == "dll" then
     vim.opt.undodir = os.getenv("HOMEPATH") .. "/.nvim/undodir"
+    vim.g.undotree_DiffCommand = "FC"
 end
 
 vim.opt.nu = true
