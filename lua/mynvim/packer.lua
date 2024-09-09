@@ -43,5 +43,6 @@ require('lazy').setup({
         version = "*",
         config = true
     },
-    'tpope/vim-fugitive'
+    'tpope/vim-fugitive',
+    'folke/todo-comments.nvim'
 })
