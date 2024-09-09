@@ -48,7 +48,7 @@ require("mason-lspconfig").setup {
     ensure_installed = {
         "lua_ls",
         "gopls",
-        "tsserver",
+        "ts_ls",
         "eslint",
         "svelte",
         "tailwindcss",
