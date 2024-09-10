@@ -10,11 +10,9 @@ require('todo-comments').setup({
             -- signs = false, -- configure signs for some keywords individually
         },
         TODO = { icon = "T", color = "info" },
-        HACK = { icon = "H", color = "#c97d30" },
         WARN = { icon = "W", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = "P", color = "perfect", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-        NOTE = { icon = "N", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "t", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        NOTE = { icon = "I", color = "hint", alt = { "INFO" } },
     },
     gui_style = {
         fg = "NONE",       -- The gui style to use for the fg highlight group.
@@ -76,8 +74,6 @@ vim.keymap.set("n", "<leader>pt", vim.cmd.TodoTelescope)
 
 -- TODO: What else?
 -- FIX: This needs fixing
--- HACK: Something fishy here
 -- PERF: Fully optimized
--- NOTE: Adding a note
+-- INFO: Adding a note
 -- WARN: ????
--- TEST: Create a Test of this
