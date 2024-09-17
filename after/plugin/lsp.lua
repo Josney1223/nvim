@@ -52,7 +52,7 @@ require("mason-lspconfig").setup {
         "eslint",
         "svelte",
         "tailwindcss",
-        "pyright"
+        "pylsp"
     },
     handlers = {
         function(server_name)
@@ -69,6 +69,14 @@ require("lspconfig").lua_ls.setup {
                     'vim'
                 }
             }
+        }
+    }
+}
+
+require("lspconfig").pylsp.setup {
+    plugins = {
+        black = {
+            enabled = true
         }
     }
 }
