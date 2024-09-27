@@ -44,5 +44,13 @@ require('lazy').setup({
         config = true
     },
     'tpope/vim-fugitive',
-    'folke/todo-comments.nvim'
+    'folke/todo-comments.nvim',
+    {
+        "rbong/vim-flog",
+        lazy = true,
+        cmd = { "Flog", "Flogsplit", "Floggit" },
+        dependencies = {
+            "tpope/vim-fugitive",
+        },
+    },
 })
