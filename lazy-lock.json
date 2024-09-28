@@ -16,5 +16,6 @@
   "toggleterm.nvim": { "branch": "main", "commit": "48be57eaba817f038d61bbf64d2c597f578c0827" },
   "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" },
   "vim-flog": { "branch": "master", "commit": "6f80c1ffa7068ca8cc0e29af7af4f6ed0717e65e" },
-  "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" }
+  "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" },
+  "yorumi.nvim": { "branch": "main", "commit": "e27ac640972da13d593ba9cc152355de2fd2c7a1" }
 }

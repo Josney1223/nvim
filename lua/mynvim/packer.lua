@@ -10,10 +10,12 @@ require('lazy').setup({
     {
         'EdenEast/nightfox.nvim',
         priority = 1000,
-        lazy = false,
-        config = function()
-            vim.cmd([[colorscheme nightfox]])
-        end,
+        lazy = false
+    },
+    {
+        'yorumicolors/yorumi.nvim',
+        priority = 1000,
+        lazy = false
     },
     "mbbill/undotree",
     {
