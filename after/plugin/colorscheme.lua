@@ -1,4 +1,10 @@
-vim.cmd([[colorscheme nightfox]])
+local current_time = os.date("*t")
+
+if current_time.hour < 18 and current_time > 6 then
+    vim.cmd([[colorscheme nightfox]])
+else
+    vim.cmd([[colorscheme yorumi]])
+end
 
 vim.api.nvim_create_user_command(
     'ThemeNightfox',
