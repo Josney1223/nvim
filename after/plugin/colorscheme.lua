@@ -1,6 +1,6 @@
 local current_time = os.date("*t")
 
-if current_time.hour < 18 and current_time > 6 then
+if current_time.hour < 18 and current_time.hour > 6 then
     vim.cmd([[colorscheme nightfox]])
 else
     vim.cmd([[colorscheme yorumi]])
