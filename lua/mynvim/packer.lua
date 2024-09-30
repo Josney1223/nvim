@@ -17,6 +17,11 @@ require('lazy').setup({
         priority = 1000,
         lazy = false
     },
+    {
+        'morhetz/gruvbox',
+        priority = 1000,
+        lazy = false
+    },
     "mbbill/undotree",
     {
         'nvim-treesitter/nvim-treesitter',
