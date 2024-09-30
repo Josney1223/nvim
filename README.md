@@ -26,6 +26,7 @@ Needs Node 20+ installed(i think this is the minimum version)
 Needs Node 20+ installed(i think this is the minimum version) 
 
 ## Installed Plugins and Major Commands
+- Leader command: ` `
 - Telescope & complimentary (Moving between files)
     - `<leader>pv` go to project view
     - `<leader>pf` go to project find files
@@ -55,3 +56,5 @@ Needs Node 20+ installed(i think this is the minimum version)
     - `:ThemeNightfox`
 - Yorumi
     - `:ThemeYorumi`
+- Melange
+    - `:ThemeMelange`
