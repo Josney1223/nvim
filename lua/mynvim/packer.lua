@@ -83,5 +83,5 @@ require('lazy').setup({
             },
         },
     },
-    'tpope/vim-commentary'
+    'numToStr/Comment.nvim'
 })
