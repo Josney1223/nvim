@@ -5,7 +5,7 @@ if current_time.hour >= 18 and current_time.hour < 22 then
 elseif current_time.hour >= 22 and current_time.hour < 6 then
     vim.cmd([[colorscheme yorumi]])
 else
-    vim.cmd([[colorscheme gruvbox]])
+    vim.cmd([[colorscheme melange]])
 end
 
 vim.api.nvim_create_user_command(
@@ -25,9 +25,9 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'ThemeGruvbox',
+    'ThemeMelange',
     function()
-        vim.cmd('colorscheme gruvbox')
+        vim.cmd('colorscheme melange')
     end,
-    { bang = true, desc = 'gruvbox theme' }
+    { bang = true, desc = 'melange theme' }
 )

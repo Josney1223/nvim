@@ -13,12 +13,12 @@ require('lazy').setup({
         lazy = false
     },
     {
-        'yorumicolors/yorumi.nvim',
+        'savq/melange-nvim',
         priority = 1000,
         lazy = false
     },
     {
-        'morhetz/gruvbox',
+        'yorumicolors/yorumi.nvim',
         priority = 1000,
         lazy = false
     },
