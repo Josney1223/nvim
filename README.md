@@ -48,8 +48,10 @@ Needs Node 20+ installed(i think this is the minimum version)
 - Treesitter (For hightlighting in languages) 
 - Todo (For taking notes of things to remember later) 
     - `<leader>pt` window for all todos
-- Flog (For seeing GitGraph) 
+- GitGraph (For seeing GitGraph) 
     - `<leader>gg` open window gitgraph
+- Vim Commentary (For commenting group of lines)
+    - `gc` coment selection in visual mode
 
 ## Themes
 - Nightfox

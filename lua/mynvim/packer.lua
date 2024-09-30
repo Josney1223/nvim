@@ -82,5 +82,6 @@ require('lazy').setup({
                 desc = "GitGraph - Draw",
             },
         },
-    }
+    },
+    'tpope/vim-commentary'
 })
