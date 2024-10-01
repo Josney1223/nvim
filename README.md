@@ -2,9 +2,13 @@
 
 ## Requirements
 - Neovim 0.10+
-
+### Linux
 On linux install `ripgrep`
-On windows install choco via powershell admin, then `choco install ripgrep` and `choco install fd`
+### Windows
+On windows install choco via powershell admin, then 
+ - `choco install ripgrep` 
+ - `choco install fd`
+ - `choco install zig`
 
 ## Folder
 Put the directory or git clone on one of the folders below:
