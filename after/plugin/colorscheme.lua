@@ -2,7 +2,7 @@ local current_time = os.date("*t")
 
 if current_time.hour >= 18 and current_time.hour < 22 then
     vim.cmd([[colorscheme nightfox]])
-elseif current_time.hour >= 22 and current_time.hour < 6 then
+elseif current_time.hour >= 22 or current_time.hour < 6 then
     vim.cmd([[colorscheme yorumi]])
 else
     vim.cmd([[colorscheme melange]])
