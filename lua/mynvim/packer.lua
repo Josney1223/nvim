@@ -22,6 +22,11 @@ require('lazy').setup({
         priority = 1000,
         lazy = false
     },
+    {
+        'rebelot/kanagawa.nvim',
+        priority = 1000,
+        lazy = false
+    },
     "mbbill/undotree",
     {
         'nvim-treesitter/nvim-treesitter',
