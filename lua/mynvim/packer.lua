@@ -13,6 +13,11 @@ require('lazy').setup({
         lazy = false
     },
     {
+        'neanias/everforest-nvim',
+        priority = 1000,
+        lazy = false
+    },
+    {
         'savq/melange-nvim',
         priority = 1000,
         lazy = false
