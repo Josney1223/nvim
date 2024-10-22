@@ -60,8 +60,4 @@ require('lazy').setup({
     'folke/todo-comments.nvim',
     'isakbm/gitgraph.nvim',
     'numToStr/Comment.nvim',
-    {
-        'Mr-LLLLL/lualine-ext.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons', 'nvim-lualine/lualine.nvim' }
-    }
 })
