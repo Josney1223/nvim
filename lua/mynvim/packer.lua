@@ -37,7 +37,6 @@ require('lazy').setup({
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate'
     },
-    "nvim-lua/plenary.nvim", -- don't forget to add this one if you don't have it yet!
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -47,11 +46,8 @@ require('lazy').setup({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v4.x'
     },
-    {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig"
-    },
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     'neovim/nvim-lspconfig',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
@@ -62,40 +58,10 @@ require('lazy').setup({
     },
     'tpope/vim-fugitive',
     'folke/todo-comments.nvim',
-    -- FIX: Import muito ruim
-    {
-        'isakbm/gitgraph.nvim',
-        opts = {
-            symbols = {
-                merge_commit = 'M',
-                commit = '*',
-            },
-            format = {
-                timestamp = '%H:%M:%S %d-%m-%Y',
-                fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
-            },
-            hooks = {
-                on_select_commit = function(commit)
-                    print('selected commit:', commit.hash)
-                end,
-                on_select_range_commit = function(from, to)
-                    print('selected range:', from.hash, to.hash)
-                end,
-            },
-        },
-        keys = {
-            {
-                "<leader>gg",
-                function()
-                    require('gitgraph').draw({}, { all = true, max_count = 5000 })
-                end,
-                desc = "GitGraph - Draw",
-            },
-        },
-    },
+    'isakbm/gitgraph.nvim',
     'numToStr/Comment.nvim',
     {
-        'OXY2DEV/bars-N-lines.nvim',
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+        'Mr-LLLLL/lualine-ext.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'nvim-lualine/lualine.nvim' }
     }
 })
