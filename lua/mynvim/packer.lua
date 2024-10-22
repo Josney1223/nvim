@@ -93,5 +93,9 @@ require('lazy').setup({
             },
         },
     },
-    'numToStr/Comment.nvim'
+    'numToStr/Comment.nvim',
+    {
+        'OXY2DEV/bars-N-lines.nvim',
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    }
 })
