@@ -3,7 +3,7 @@ math.randomseed(os.time())
 
 local lightTheme = { "melange", "everforest" }
 local lightDarkTheme = { "nightfox", "kanagawa" }
-local darkTheme = { "yorumi" }
+local darkTheme = { "yorumi", "catppuccin-mocha" }
 
 local sizeArray = 0
 local colorRand = 0

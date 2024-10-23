@@ -13,6 +13,11 @@ require('lazy').setup({
         lazy = false
     },
     {
+        'catppuccin/nvim',
+        priority = 1000,
+        lazy = false
+    },
+    {
         'neanias/everforest-nvim',
         priority = 1000,
         lazy = false
