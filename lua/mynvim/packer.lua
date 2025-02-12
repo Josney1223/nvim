@@ -23,11 +23,6 @@ require('lazy').setup({
         lazy = false
     },
     {
-        'savq/melange-nvim',
-        priority = 1000,
-        lazy = false
-    },
-    {
         'yorumicolors/yorumi.nvim',
         priority = 1000,
         lazy = false
@@ -64,5 +59,5 @@ require('lazy').setup({
     'tpope/vim-fugitive',
     'folke/todo-comments.nvim',
     'isakbm/gitgraph.nvim',
-    'numToStr/Comment.nvim',
+    'numToStr/Comment.nvim'
 })
