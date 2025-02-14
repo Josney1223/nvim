@@ -59,5 +59,15 @@ require('lazy').setup({
     'tpope/vim-fugitive',
     'folke/todo-comments.nvim',
     'isakbm/gitgraph.nvim',
-    'numToStr/Comment.nvim'
+    'numToStr/Comment.nvim',
+    {
+        "rest-nvim/rest.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            opts = function(_, opts)
+                opts.ensure_installed = opts.ensure_installed or {}
+                table.insert(opts.ensure_installed, "http")
+            end,
+        }
+    }
 })
