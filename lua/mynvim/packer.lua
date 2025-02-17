@@ -64,6 +64,7 @@ require('lazy').setup({
         "rest-nvim/rest.nvim",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
+            "j-hui/fidget.nvim",
             opts = function(_, opts)
                 opts.ensure_installed = opts.ensure_installed or {}
                 table.insert(opts.ensure_installed, "http")
