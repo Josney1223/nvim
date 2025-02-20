@@ -3,7 +3,7 @@
 ## Requirements
 - Neovim 0.10+
 ### Linux
-On linux install `ripgrep` and `luarocks`
+On linux install `ripgrep` and `luarocks` and a clipboard manager (`xsel`)
 ### Windows
 On windows install choco via powershell admin, then 
  - `choco install ripgrep` 
