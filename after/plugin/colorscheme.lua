@@ -1,7 +1,7 @@
 local current_time = os.date("*t")
 math.randomseed(os.time())
 
-local lightTheme = { "everforest" }
+local lightTheme = { "everforest", 'rose-pine-moon' }
 local lightDarkTheme = { "nightfox", "kanagawa" }
 local darkTheme = { "yorumi", "catppuccin-mocha" }
 

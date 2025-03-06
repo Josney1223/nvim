@@ -13,6 +13,11 @@ require('lazy').setup({
         lazy = false
     },
     {
+        'rose-pine/neovim',
+        priority = 1000,
+        lazy = false
+    },
+    {
         'catppuccin/nvim',
         priority = 1000,
         lazy = false
