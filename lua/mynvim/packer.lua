@@ -66,6 +66,10 @@ require('lazy').setup({
     'isakbm/gitgraph.nvim',
     'numToStr/Comment.nvim',
     {
+        "christoomey/vim-tmux-navigator",
+        lazy = false
+    },
+    {
         "rest-nvim/rest.nvim",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
