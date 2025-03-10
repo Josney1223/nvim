@@ -56,11 +56,11 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
-    {
-        "akinsho/toggleterm.nvim",
-        version = "*",
-        config = true
-    },
+    -- {
+    --     "akinsho/toggleterm.nvim",
+    --     version = "*",
+    --     config = true
+    -- },
     'tpope/vim-fugitive',
     'folke/todo-comments.nvim',
     'isakbm/gitgraph.nvim',
