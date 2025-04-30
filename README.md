@@ -1,5 +1,10 @@
 # NVIM CONFIG
 
+Use with Tmux and Kyed for better programming experience:
+- [Kyed](https://github.com/rvaiya/keyd)
+    - For Caps lock become useful as ctrl + esc
+- [Tmux](https://github.com/Josney1223/tmux)
+
 ## Requirements
 - Neovim 0.10+
 ### Linux

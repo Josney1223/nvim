@@ -8,6 +8,8 @@ local lightTheme = { 'rose-pine-moon' }
 local lightDarkTheme = { 'rose-pine-moon' }
 local darkTheme = { 'rose-pine-moon' }
 
+require('rose-pine').setup({ transparent = true })
+
 local sizeArray = 0
 local colorRand = 0
 local themeName = ""
