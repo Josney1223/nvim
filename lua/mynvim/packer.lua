@@ -36,10 +36,6 @@ require('lazy').setup({
     'isakbm/gitgraph.nvim',
     'numToStr/Comment.nvim',
     {
-        "christoomey/vim-tmux-navigator",
-        lazy = false
-    },
-    {
         "rest-nvim/rest.nvim",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
@@ -52,3 +48,14 @@ require('lazy').setup({
         }
     }
 })
+
+local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
+if BinaryFormat == "so" then
+    require("lazy").setup({
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false
+    },
+})
+elseif BinaryFormat == "dll" then
+end
