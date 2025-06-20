@@ -46,16 +46,9 @@ require('lazy').setup({
                 table.insert(opts.ensure_installed, "http")
             end,
         }
-    }
-})
-
-local BinaryFormat = package.cpath:match("%p[\\|/]?%p(%a+)")
-if BinaryFormat == "so" then
-    require("lazy").setup({
+    },
     {
         "christoomey/vim-tmux-navigator",
         lazy = false
     },
 })
-elseif BinaryFormat == "dll" then
-end
