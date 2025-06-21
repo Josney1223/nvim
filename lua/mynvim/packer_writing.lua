@@ -50,5 +50,21 @@ require('lazy').setup({
     {
         "christoomey/vim-tmux-navigator",
         lazy = false
+    },
+    {
+        "nvim-neorg/neorg",
+        lazy = false,
+        version = "*",
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},
+                    ["core.concealer"] = {}
+                }
+            }
+            vim.wo.foldlevel = 99
+            vim.wo.conceallevel = 2
+        end
     }
 })
+print("Loaded Neorg")
