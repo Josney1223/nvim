@@ -1,54 +1,13 @@
-local current_time = os.date("*t")
-math.randomseed(os.time())
-
--- local lightTheme = { "everforest", 'rose-pine-moon' }
--- local lightDarkTheme = { "nightfox", "kanagawa" }
--- local darkTheme = { "yorumi", "catppuccin-mocha" }
-local lightTheme = { 'rose-pine-moon' }
-local lightDarkTheme = { 'rose-pine-moon' }
-local darkTheme = { 'rose-pine-moon' }
-
-require('rose-pine').setup({ transparent = true })
-
-local sizeArray = 0
-local colorRand = 0
 local themeName = ""
 vim.o.background = "dark"
 
-if current_time.hour >= 18 and current_time.hour < 22 then
-    sizeArray = #lightDarkTheme
-    colorRand = math.random(sizeArray)
-    themeName = lightDarkTheme[colorRand]
-elseif current_time.hour >= 22 or current_time.hour < 6 then
-    sizeArray = #darkTheme
-    colorRand = math.random(sizeArray)
-    themeName = darkTheme[colorRand]
+if _G['escolha'] == "2" then
+    themeName = 'everforest'
 else
-    sizeArray = #lightTheme
-    colorRand = math.random(sizeArray)
-    themeName = lightTheme[colorRand]
+    themeName = 'rose-pine'
 end
+
+require(themeName).setup({ transparent = true })
+
 vim.cmd("colorscheme " .. themeName)
 print("Tema atual:", themeName)
-
-local function createThemeCommand(theme)
-    vim.api.nvim_create_user_command(
-        'Theme' .. theme:gsub("-", ""),
-        function()
-            vim.cmd('colorscheme ' .. theme)
-        end,
-        { bang = true, desc = theme .. ' theme' }
-    )
-end
-
-for i = 1, #lightTheme, 1 do
-    createThemeCommand(lightTheme[i])
-end
-
-for i = 1, #lightDarkTheme, 1 do
-    createThemeCommand(lightDarkTheme[i])
-end
-
-for i = 1, #darkTheme, 1 do
-    createThemeCommand(darkTheme[i])
-end

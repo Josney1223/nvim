@@ -1,7 +1,7 @@
 print(_VERSION)
 print("NVIM Version " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch)
 
-local escolha = vim.fn.input("Está utilizando para código(1) ou escrita(2)?")
+escolha = vim.fn.input("Está utilizando para código(1) ou escrita(2)?")
 print("\n")
 
 if escolha == "2" then
