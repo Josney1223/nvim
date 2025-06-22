@@ -32,21 +32,7 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'tpope/vim-fugitive',
-    'folke/todo-comments.nvim',
     'isakbm/gitgraph.nvim',
-    'numToStr/Comment.nvim',
-    {
-        "rest-nvim/rest.nvim",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "j-hui/fidget.nvim",
-            "rest-nvim/tree-sitter-http",
-            opts = function(_, opts)
-                opts.ensure_installed = opts.ensure_installed or {}
-                table.insert(opts.ensure_installed, "http")
-            end,
-        }
-    },
     {
         "christoomey/vim-tmux-navigator",
         lazy = false
@@ -67,4 +53,6 @@ require('lazy').setup({
         end
     }
 })
+vim.opt.spelllang = { 'pt_br', 'en' }
+vim.opt.spell = true
 print("Loaded Neorg")
