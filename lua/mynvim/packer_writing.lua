@@ -1,4 +1,5 @@
 -- on windows install choco, with choco install ripgrep and fd
+-- use luarocks to install lua-utils.nvim
 
 require('lazy').setup({
     {
@@ -22,6 +23,10 @@ require('lazy').setup({
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { { "nvim-lua/plenary.nvim" } }
+    },
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v4.x'
     },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
