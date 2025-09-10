@@ -53,7 +53,6 @@ if _G['escolha'] ~= "2" then
             "eslint",
             "svelte",
             "tailwindcss",
-            "pylsp"
         },
         handlers = {
             function(server_name)
