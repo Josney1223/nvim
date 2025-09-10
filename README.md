@@ -9,6 +9,7 @@ Use with Tmux and Kyed for better programming experience:
 - Neovim 0.10+
 ### Linux
 On linux install `ripgrep` and `luarocks` and a clipboard manager (`xsel`)
+If Ubuntu use snap store for ripgrep and apt for luarocks
 ### Windows
 On windows install choco via powershell admin, then 
  - `choco install ripgrep` 
@@ -28,12 +29,15 @@ Put the directory or git clone on one of the folders below:
 For NVIM
 ### Golang (Gopls)
 Needs Go installed
+If Ubuntu use snap store
 ### Python (pylsp)
 Needs Python3 installed
 ### JS (ts_ls, eslint, svelte)
 Needs Node 20+ installed(i think this is the minimum version) 
+If Ubuntu install npm and with npm install node. 
 ### Tailwind CSS (tailwindcss)
 Needs Node 20+ installed(i think this is the minimum version) 
+If Ubuntu install npm and with npm install node. 
 
 ## Installed Plugins and Major Commands
 - Leader command: ` `
