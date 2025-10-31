@@ -50,10 +50,10 @@ If Ubuntu install npm and with npm install node.
 - Harpoon (Changing between chosen files) 
     - `<C-e>` window with all files 
     - `<leader>a` adding file to harpoon
-    - `<leader>h` go to file 1 
-    - `<leader>j` go to file 2
-    - `<leader>k` go to file 3
-    - `<leader>l` go to file 4
+    - `<leader>1` go to file 1 
+    - `<leader>2` go to file 2
+    - `<leader>3` go to file 3
+    - `<leader>4` go to file 4
 - Terminal (Opening terminal inside nvim)
     - `<leader>t` open and close terminal
 - Undotree (Nice Undotree) 
