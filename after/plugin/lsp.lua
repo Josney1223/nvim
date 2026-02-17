@@ -61,7 +61,7 @@ if _G['escolha'] ~= "2" then
         }
     }
 
-    require("lspconfig").lua_ls.setup {
+    vim.lsp.config.lua_ls = {
         settings = {
             Lua = {
                 diagnostics = {
@@ -69,14 +69,6 @@ if _G['escolha'] ~= "2" then
                         'vim'
                     }
                 }
-            }
-        }
-    }
-
-    require("lspconfig").pylsp.setup {
-        plugins = {
-            black = {
-                enabled = true
             }
         }
     }
