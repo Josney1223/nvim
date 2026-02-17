@@ -15,7 +15,9 @@ require('lazy').setup({
     "mbbill/undotree",
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        lazy = false,
+        priority = 1000,
+        build = ':TSUpdate',
     },
     {
         "ThePrimeagen/harpoon",
@@ -36,20 +38,22 @@ require('lazy').setup({
     'isakbm/gitgraph.nvim',
     'numToStr/Comment.nvim',
     {
-        "rest-nvim/rest.nvim",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "j-hui/fidget.nvim",
-            "rest-nvim/tree-sitter-http",
-            "nvim-neotest/nvim-nio",
-            opts = function(_, opts)
-                opts.ensure_installed = opts.ensure_installed or {}
-                table.insert(opts.ensure_installed, "http")
-            end,
+        'mistweaverco/kulala.nvim',
+        keys = {
+            { "<leader>Rs", desc = "Send request" },
+            { "<leader>Ra", desc = "Send all requests" },
+            { "<leader>Rb", desc = "Open scratchpad" },
+        },
+        ft = { "http", "rest" },
+        opts = {
+            global_keymaps = false,
+            global_keymaps_prefix = "<leader>R",
+            kulala_keymaps_prefix = ""
         }
     },
     {
         "christoomey/vim-tmux-navigator",
         lazy = false
-    }
+    },
+
 })
