@@ -1,4 +1,4 @@
-require('nvim-treesitter').setup {
+require('nvim-treesitter.config').setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     ensure_installed = { "c", "lua", "svelte", "go", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
 
@@ -22,3 +22,17 @@ require('nvim-treesitter').setup {
         additional_vim_regex_highlighting = false,
     },
 }
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = "*",
+    callback = function()
+        local buf = vim.api.nvim_get_current_buf()
+        local ft = vim.bo[buf].filetype
+
+        if ft ~= "" and pcall(vim.treesitter.get_parser, buf, ft) then
+            if not vim.treesitter.highlighter.active[buf] then
+                vim.treesitter.start()
+            end
+        end
+    end
+})
