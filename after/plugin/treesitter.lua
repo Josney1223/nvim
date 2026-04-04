@@ -28,11 +28,10 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     callback = function()
         local buf = vim.api.nvim_get_current_buf()
         local ft = vim.bo[buf].filetype
-        if ft == "" then return end
-
-        local has_parser = require("nvim-treesitter.parsers").has_parser(ft)
-        if has_parser and not vim.treesitter.highlighter.active[buf] then
-            vim.treesitter.start(buf, ft)
+        if ft ~= "" and pcall(vim.treesitter.get_parser, buf, ft) then
+            if not vim.treesitter.highlighter.active[buf] then
+                pcall(vim.treesitter.start, buf, ft)
+            end
         end
     end
 })
