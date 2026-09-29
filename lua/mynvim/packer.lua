@@ -66,5 +66,10 @@ require('lazy').setup({
         "christoomey/vim-tmux-navigator",
         lazy = false
     },
+    {
+        "coder/claudecode.nvim",
+        dependencies = { "folke/snacks.nvim" },
+        config = true,
 
+    }
 })

@@ -9,3 +9,8 @@ vim.keymap.set("n", "<leader>py", '"+p')
 vim.keymap.set("n", "<leader>k", function()
     vim.diagnostic.open_float()
 end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<cr>")
+vim.keymap.set("v", "<leader>ccs", "<cmd>ClaudeCodeSend<cr>")
+vim.keymap.set("n", "<leader>ccda", "<cmd>ClaudeCodeDiffAccept<cr>")
+vim.keymap.set("n", "<leader>ccdd", "<cmd>ClaudeCodeDiffDeny<cr>")

@@ -4,3 +4,4 @@ print("NVIM Version " .. vim.version().major .. "." .. vim.version().minor .. ".
 require("mynvim.remap")
 require("mynvim.packer")
 require("mynvim.set")
+require("mynvim.claude_settings")
