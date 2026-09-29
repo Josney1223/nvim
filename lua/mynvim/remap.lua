@@ -10,7 +10,11 @@ vim.keymap.set("n", "<leader>k", function()
     vim.diagnostic.open_float()
 end, { noremap = true, silent = true })
 
+-- Claudinho
 vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<cr>")
 vim.keymap.set("v", "<leader>ccs", "<cmd>ClaudeCodeSend<cr>")
 vim.keymap.set("n", "<leader>ccda", "<cmd>ClaudeCodeDiffAccept<cr>")
 vim.keymap.set("n", "<leader>ccdd", "<cmd>ClaudeCodeDiffDeny<cr>")
+
+-- Sobrescrever no Claude
+vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], { desc = "Window commands from terminal" })
