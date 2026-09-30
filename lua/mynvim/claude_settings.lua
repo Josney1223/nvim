@@ -1,6 +1,5 @@
 -- ~/.config/nvim/lua/config/claude_settings.lua
 -- Cria ~/.claude/settings.json com permissões restritivas, se ainda não existir.
--- Nunca sobrescreve um arquivo existente.
 --
 -- Rodar para instalar
 -- npm install -g @anthropic-ai/claude-code
@@ -8,10 +7,19 @@
 
 local M = {}
 
-local settings_path = vim.fn.expand("~/.claude/settings.json")
+local claude_dir = vim.fn.expand("~/.claude")
+local settings_path = claude_dir .. "/settings.json"
+local prompt_path = claude_dir .. "/enforced-prompt.md"
 
--- JSON escrito à mão para ficar legível (vim.json.encode não indenta na 0.11)
-local default_settings = [[
+-- Injected on every prompt via the UserPromptSubmit hook
+local enforced_prompt = [[
+# Rules
+- Always answer in English.
+- Never commit without asking me first.
+- If is specified, only change the mentioned file.
+]]
+
+local settings = [[
 {
   "permissions": {
     "deny": [
@@ -38,35 +46,61 @@ local default_settings = [[
       "Bash(git diff:*)",
       "Bash(git log:*)"
     ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "cat ~/.claude/enforced-prompt.md" }
+        ]
+      }
+    ]
   }
 }
 ]]
 
-function M.ensure()
-    if vim.uv.fs_stat(settings_path) then
-        vim.notify("Claude Code: settings.json já existe " .. settings_path, vim.log.levels.INFO)
-        return -- já existe, não mexe
+local function read_file(path)
+    local f = io.open(path, "r")
+    if not f then return nil end
+    local content = f:read("*a")
+    f:close()
+    return content
+end
+
+-- Writes only when the content changed, so startup stays fast
+local function write_if_changed(path, content)
+    if read_file(path) == content then
+        return false
+    end
+    local f, err = io.open(path, "w")
+    if not f then
+        vim.notify("Claude Code: failed to write " .. path .. ": " .. err, vim.log.levels.ERROR)
+        return false
+    end
+    f:write(content)
+    f:close()
+    vim.uv.fs_chmod(path, tonumber("600", 8))
+    return true
+end
+
+function M.sync()
+    if vim.fn.isdirectory(claude_dir) == 0 then
+        vim.fn.mkdir(claude_dir, "p", tonumber("700", 8))
     end
 
-    local dir = vim.fn.fnamemodify(settings_path, ":h")
-    if vim.fn.isdirectory(dir) == 0 then
-        vim.fn.mkdir(dir, "p", tonumber("700", 8))
-    end
+    local updated = {}
+    if write_if_changed(settings_path, settings) then table.insert(updated, "settings.json") end
+    if write_if_changed(prompt_path, enforced_prompt) then table.insert(updated, "enforced-prompt.md") end
 
-    local ok = vim.fn.writefile(vim.split(default_settings, "\n", { trimempty = true }), settings_path)
-    if ok == 0 then
-        vim.uv.fs_chmod(settings_path, tonumber("600", 8))
-        vim.notify("Claude Code: settings.json criado em " .. settings_path, vim.log.levels.INFO)
-    else
-        vim.notify("Claude Code: falha ao criar " .. settings_path, vim.log.levels.ERROR)
+    if #updated > 0 then
+        vim.notify("Claude Code: updated " .. table.concat(updated, ", "), vim.log.levels.INFO)
     end
 end
 
--- Executa depois que o Neovim terminar de iniciar, para não atrasar o startup
 vim.api.nvim_create_autocmd("VimEnter", {
     once = true,
     callback = function()
-        vim.schedule(M.ensure)
+        vim.schedule(M.sync)
     end,
 })
 
