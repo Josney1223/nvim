@@ -18,6 +18,8 @@ local enforced_prompt = [[
 - Never commit without asking me first.
 - If is specified, only change the mentioned file.
 - Always ask questions before making any changes.
+- When commit, always use systems default user.
+- Never push the commits.
 ]]
 
 local settings = [[
