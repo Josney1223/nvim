@@ -17,6 +17,7 @@ local enforced_prompt = [[
 - Always answer in English.
 - Never commit without asking me first.
 - If is specified, only change the mentioned file.
+- Always ask questions before making any changes.
 ]]
 
 local settings = [[
