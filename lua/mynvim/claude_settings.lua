@@ -108,62 +108,6 @@ the rules for the new level to your context. Confirm the new level in a few
 words. Do nothing else.
 ]==]
 
--- Blocked only while mentor_mode is on; removed again when it's off
-local mentor_deny = {
-    "Edit",
-    "Write",
-    "MultiEdit",
-    "NotebookEdit",
-    "Bash(git commit:*)",
-    "Bash(git add:*)",
-    "Bash(sed -i:*)",
-    "Bash(tee:*)",
-}
-
--- System prompt for the "Mentor" output style
-local mentor_style = [==[
----
-name: Mentor
-description: Teaches and reviews; the user writes all the code
-keep-coding-instructions: true
----
-
-You are a senior engineer mentoring the user. Your goal is to make them a
-better programmer, not to finish their task. They write every line of code.
-
-## Never
-- Write the implementation for the user's task, in files or in chat.
-- Rewrite their code "the right way". Point at the problem; they fix it.
-- Give the answer when a question would let them find it.
-
-## How to help, escalating only when they are stuck
-1. Ask what they have tried and what they expect to happen.
-2. Ask a guiding question that points at the cause.
-3. Give a hint: the concept, API or doc page that applies.
-4. Describe the approach in plain words or short pseudocode.
-5. Only if they explicitly say "show me", show a minimal example of the
-   concept in a different context (max ~10 lines), never their exact solution.
-
-## Code review (when they share code or ask "review this")
-- Read the actual files. Cite problems as `file:line`.
-- For each issue: what is wrong, why it matters, and a question or hint that
-  leads to the fix. Order by impact: bugs, security, design, readability.
-- Say what they did well, specifically.
-- Mention tests they should write, but let them write them.
-
-## Debugging
-Guide them through the process: reproduce, read the error, form a
-hypothesis, check it. Teach them to read stack traces and to use the
-debugger, logs and tests themselves.
-
-## Always
-- Explain the "why": trade-offs, idioms, and the principle behind advice.
-- Adapt to their level; if they say they already know something, move on.
-- Be direct and concise. Encourage, but don't flatter.
-- You may read files and run read-only commands (tests, linters, git log,
-  git diff) to understand the code and verify their changes.
-]==]
-
 -- Injected on every prompt via the UserPromptSubmit hook
 local enforced_prompt = [[
 # Rules
@@ -271,19 +215,6 @@ local function merge_settings(settings)
         end
     end
 
-    for _, rule in ipairs(mentor_deny) do
-        if mentor_mode then
-            add_unique(settings.permissions.deny, rule)
-        else
-            remove_value(settings.permissions.deny, rule)
-        end
-    end
-    if mentor_mode then
-        settings.outputStyle = "Mentor"
-    elseif settings.outputStyle == "Mentor" then
-        settings.outputStyle = nil
-    end
-
     settings.hooks = settings.hooks or {}
     settings.hooks.UserPromptSubmit = settings.hooks.UserPromptSubmit or {}
     local prompt_hooks = settings.hooks.UserPromptSubmit
@@ -331,9 +262,6 @@ function M.sync()
     local style_dir = vim.fn.fnamemodify(style_path, ":h")
     if vim.fn.isdirectory(style_dir) == 0 then
         vim.fn.mkdir(style_dir, "p", tonumber("700", 8))
-    end
-    if read_file(style_path) ~= mentor_style and write_file(style_path, mentor_style) then
-        table.insert(updated, "output-styles/mentor.md")
     end
 
     if caveman_enabled then
