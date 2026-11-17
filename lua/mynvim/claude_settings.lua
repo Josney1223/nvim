@@ -115,6 +115,7 @@ local enforced_prompt = [[
 - Never commit without asking me first.
 - Run the tests after every change.
 - Never add "Co-Authored-By" or "Generated with Claude Code" lines to commits or PRs.
+- Never query any Database, always ask for information on the tables.
 ]]
 
 -- Rules that must always be present (added, never removed)
